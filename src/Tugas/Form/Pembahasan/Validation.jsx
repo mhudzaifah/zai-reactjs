@@ -86,7 +86,7 @@ export default class Validation extends React.Component{
                     {
                         this.state.errors && <ShowErrors errors={this.state.errors} />
                     }
-                    <h4>Login Page</h4>
+                    <h4>Form Registrasi</h4>
                     <form onSubmit={this.handleSubmit}>
                         <Input type="name" name="name" label="Nama" 
                             onChange={value => this.setState({name: value})}/>
