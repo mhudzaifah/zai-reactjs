@@ -1,10 +1,10 @@
-import Styling from "./Tugas/Styling";
+import Form from "./Tugas/Form";
 
 
 function App() {
   return (
     <div className="App">
-      <Styling />
+      <Form/>
     </div>
   );
 }
