@@ -1,10 +1,12 @@
-import Form from "./Tugas/Form";
+
+
+import ApiNews from "./Tugas/ApiNews";
 
 
 function App() {
   return (
     <div className="App">
-      <Form/>
+        <ApiNews />
     </div>
   );
 }
