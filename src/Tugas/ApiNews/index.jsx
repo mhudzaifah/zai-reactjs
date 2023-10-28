@@ -1,12 +1,12 @@
 import React from "react";
-import NewsApp from "./Pembahasan/NewsApp";
+import NewsAppp from "./Pembahasan/NewsApp";
 
-export default class ApiNews extends React.Component{
+export default class ApiNewss extends React.Component{
 
     render(){
         return(
             <div>
-                <NewsApp />
+                <NewsAppp />
             </div>
         )
     }

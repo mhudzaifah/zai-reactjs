@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class NewsApp extends Component {
+class NewsAppp extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,7 +41,7 @@ class NewsApp extends Component {
     
     return (
       <div className="container">
-        <h1>Portal Berita</h1>
+        <h1>News Portal</h1>
         <div className="form-group">
           <input
             type="text"
@@ -70,4 +70,4 @@ class NewsApp extends Component {
   }
 }
 
-export default NewsApp;
+export default NewsAppp;
