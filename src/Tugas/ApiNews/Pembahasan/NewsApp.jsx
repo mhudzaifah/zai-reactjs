@@ -1,8 +1,8 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class NewsAppp extends Component {
+class NewsAppp extends React.Component {
   constructor() {
     super();
     this.state = {
