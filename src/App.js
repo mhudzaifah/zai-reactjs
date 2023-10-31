@@ -1,12 +1,12 @@
 
 
-import ApiNewss from "./Tugas/ApiNews";
+import ApiNews from "./Tugas/ApiNews";
 
 
 function App() {
   return (
     <div className="App">
-        <ApiNewss />
+        <ApiNews />
     </div>
   );
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class NewsAppp extends React.Component {
+class NewsApp extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -70,4 +70,4 @@ class NewsAppp extends React.Component {
   }
 }
 
-export default NewsAppp;
+export default NewsApp;
