@@ -1,4 +1,3 @@
-
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,6 +7,7 @@ class NewsApp extends React.Component {
     this.state = {
       news: [],
       searchQuery: '',
+      error: null,
     };
   }
 
@@ -18,9 +18,14 @@ class NewsApp extends React.Component {
   getNews = (country) => {
     const apiKey = 'b4c8666f558c4735bc8fe5e88f5de72f';
     fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`)
-      .then((response) => response.json())
-      .then((data) => this.setState({ news: data.articles }))
-      .catch((error) => console.error('Error fetching data:', error));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => this.setState({ news: data.articles, error: null }))
+      .catch((error) => this.setState({ error: error.message, news: [] }));
   }
 
   handleSearch = () => {
@@ -30,14 +35,19 @@ class NewsApp extends React.Component {
     } else {
       const apiKey = 'b4c8666f558c4735bc8fe5e88f5de72f';
       fetch(`https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}`)
-        .then((response) => response.json())
-        .then((data) => this.setState({ news: data.articles }))
-        .catch((error) => console.error('Error fetching data:', error));
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => this.setState({ news: data.articles, error: null }))
+        .catch((error) => this.setState({ error: error.message, news: [] }));
     }
   }
 
   render() {
-    const { news, searchQuery } = this.state;
+    const { news, searchQuery, error } = this.state;
     
     return (
       <div className="container">
@@ -52,6 +62,7 @@ class NewsApp extends React.Component {
           />
           <button className="btn btn-primary" onClick={this.handleSearch}>Search</button>
         </div>
+        {error && <div className="alert alert-danger">{error}</div>}
         <div className="row">
           {news.map((article, index) => (
             <div key={index} className="col-md-4 mb-4">
