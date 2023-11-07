@@ -1,12 +1,10 @@
-
-
-import ApiNews from "./Tugas/ApiNews";
+import Hook from "./Tugas/Hook";
 
 
 function App() {
   return (
     <div className="App">
-        <ApiNews />
+        <Hook />
     </div>
   );
 }
