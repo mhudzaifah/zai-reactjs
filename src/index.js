@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Tugas/Route/home';
+import About from './Tugas/Route/About';
+import Category from './Tugas/Route/category';
+import Katalog from './Tugas/Route/Katalog';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='home' element={<Home />} />
+        <Route path='about' element={<About />} />
+        <Route path='category' element={<Category />} />
+        <Route path='Katalog' element={<Katalog />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
